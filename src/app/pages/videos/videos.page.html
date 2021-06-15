@@ -1,0 +1,41 @@
+<ion-header>
+    <ion-toolbar>
+
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="/" text="Regresar" color="primary"></ion-back-button>
+        </ion-buttons>
+        <ion-title>Videos descargados:
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true" class="ion-padding">
+
+
+
+    <ion-chip (click)="getPathVideo()" *ngIf="videopath.length == 0" class="CargarVideos" outline color="dark">
+        <ion-icon name="videocam"></ion-icon>
+        <ion-label>CARGAR MIS VIDEOS</ion-label>
+    </ion-chip>
+
+    <ion-card class="card" *ngFor="let video of videopath">
+
+        <ion-card-header>
+            <ion-card-title class="font">
+                {{video.id}} - {{video.titulo}}
+            </ion-card-title>
+
+        </ion-card-header>
+
+        <ion-card-content>
+
+            <video class="video" width="630" height="360" controls>
+                    <source src="{{video.path}} " type="video/mp4 ">
+            </video>
+
+        </ion-card-content>
+
+    </ion-card>
+
+</ion-content>

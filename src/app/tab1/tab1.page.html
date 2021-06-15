@@ -1,0 +1,66 @@
+<ion-header [translucent]="true" no-border>
+    <ion-toolbar color="dark">
+
+
+        <ion-buttons slot="start">
+            <ion-menu-button color="primary" menu="first"></ion-menu-button>
+        </ion-buttons>
+
+        <ion-title color="primary">
+            Solicitudes de Usuarios:
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+
+    <div no-border class="messageInfoDatosBD" *ngIf="usuario.length == 0">¡OPS, NO HAY SOLICITUDES REGISTRADA!</div>
+
+    <ion-grid size="12" size-lg="12" size-md="4" size-sm="6">
+
+        <ion-card class="card" *ngFor=" let usuario of usuario let i = index">
+
+            <ion-row (click)="onClick(i)" class="columna">
+                <ion-col>
+
+                    <ion-card-header>
+                        <ion-card-title class="font">Legajo:
+                            <ion-text>{{usuario.legajo}}</ion-text>
+                        </ion-card-title>
+
+                        <ion-card-subtitle class="font">Nombre:
+                            <ion-text>{{usuario.nombre}}</ion-text>
+                        </ion-card-subtitle>
+
+                        <ion-card-subtitle class="font">E-mail:
+                            <ion-text>{{usuario.email}}</ion-text>
+                        </ion-card-subtitle>
+                    </ion-card-header>
+
+                    <ion-card-content>
+
+                        <ion-chip routerLink="/descargar-videos" outline color="dark">
+                            <ion-icon name="videocam"></ion-icon>
+                            <ion-label>Solicitudes</ion-label>
+                        </ion-chip>
+
+                        <ion-chip routerLink="/videos" outline color="dark">
+                            <ion-icon name="videocam"></ion-icon>
+                            <ion-label>Ver videos</ion-label>
+                        </ion-chip>
+
+                    </ion-card-content>
+
+
+                </ion-col>
+            </ion-row>
+        </ion-card>
+
+
+        <!-- 
+        <app-solicitud *ngFor=" let user of usuario" [usuario]="user"></app-solicitud> -->
+
+    </ion-grid>
+
+</ion-content>

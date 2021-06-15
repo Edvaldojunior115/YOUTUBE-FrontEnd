@@ -1,0 +1,53 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="/" text="Regresar" color="primary" mode="ios"></ion-back-button>
+        </ion-buttons>
+        <ion-title>Descargar Videos</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+    <div no-border class="messageInfoDatosBD" *ngIf="solicitudes.length == 0">¡OPS, NO HAY NINGUNA SOLICITUD REGISTRADA PARA EL USUARIO!</div>
+
+    <ion-grid fixed>
+
+        <ion-row>
+
+
+            <ion-col size="12" size-lg="12" size-md="4" size-sm="6" *ngFor="let solicitud of solicitudes let i = index">
+
+                <ion-card>
+                    <ion-card-header>
+                        <ion-card-title class="font">Código:
+                            <ion-text>{{solicitud.id}}</ion-text>
+                        </ion-card-title>
+                        <ion-card-subtitle class="font">Usuario solicitante:
+                            <ion-text>{{solicitud.nombre}}</ion-text>
+                        </ion-card-subtitle>
+                        <ion-card-subtitle class="font">URL del video:
+                            <ion-text>{{solicitud.url}}</ion-text>
+                        </ion-card-subtitle>
+                    </ion-card-header>
+
+                    <ion-card-content>
+
+                        <ion-chip (click)="DescargarVideo(i)" outline color="dark">
+                            <ion-icon name="videocam"></ion-icon>
+                            <ion-label>Descargar</ion-label>
+                        </ion-chip>
+
+                    </ion-card-content>
+
+
+                </ion-card>
+
+            </ion-col>
+
+        </ion-row>
+
+    </ion-grid>
+
+</ion-content>

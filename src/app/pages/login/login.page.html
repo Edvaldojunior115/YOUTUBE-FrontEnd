@@ -1,0 +1,37 @@
+<ion-header no-border>
+    <ion-toolbar>
+        <ion-title>Iniciar Sesión</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content no-border>
+
+    <form>
+
+        <ion-list class="Contenedor">
+
+            <ion-item class="imagen">
+                <img src="../../../assets/icon/AGD.png">
+            </ion-item>
+
+            <ion-item class="label">
+                <ion-label position="floating">Legajo: </ion-label>
+                <ion-input type="text" name="legajo" [(ngModel)]='user.legajo' required></ion-input>
+            </ion-item>
+
+            <ion-item class="label">
+                <ion-label position="floating">Password:</ion-label>
+                <ion-input name="password" type="password" [(ngModel)]='user.password' required></ion-input>
+            </ion-item>
+
+
+            <ion-button (click)="RealizarLogin()" class="btlogin" color="tertiary" shape="round">
+                Login
+            </ion-button>
+        </ion-list>
+
+    </form>
+
+
+
+</ion-content>

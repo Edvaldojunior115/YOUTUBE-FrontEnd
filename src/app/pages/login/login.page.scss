@@ -1,0 +1,28 @@
+.Contenedor {
+    position: absolute;
+    width: 100%;
+    padding: 20px;
+    margin: 20px;
+}
+
+.imagen {
+    width: 200px;
+    align-items: center;
+    border: solid whitesmoke;
+    border-radius: 90px;
+}
+
+img {
+    width: 200px;
+}
+
+.label {
+    width: 50%;
+}
+
+.btlogin {
+    align-items: center;
+    width: 100px;
+    height: 40px;
+    padding-top: 10px;
+}

@@ -1,0 +1,50 @@
+<ion-header [translucent]="true" no-border>
+
+    <ion-toolbar color="dark">
+        <ion-title color="primary" slot="start">
+            Solicitud de Video:
+        </ion-title>
+    </ion-toolbar>
+
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+
+    <form #RegistroSolicitudForm="ngForm" (ngSubmit)="CrearSolicitud()">
+
+        <ion-item class="text-area">
+            <ion-label position="floating">Ingresar su Legajo: </ion-label>
+            <ion-input type="text" name="legajo" [(ngModel)]='user.legajo' required></ion-input>
+        </ion-item>
+
+        <ion-item class="text-area">
+            <ion-label position="floating">Ingresar URL del video: </ion-label>
+            <ion-input name="url" [(ngModel)]='solicitudInput.url' required></ion-input>
+        </ion-item>
+
+        <ion-item class="text-area">
+            <ion-label position="floating">Ingresar Nombre del autorizante: </ion-label>
+            <ion-input name="autorizante" [(ngModel)]='solicitudInput.autorizante' required></ion-input>
+        </ion-item>
+
+
+        <ion-button (click)="CrearSolicitud()" color="dark" [disabled]="RegistroSolicitudForm.invalid" color="dark" class="btSolicitar" expand="block">
+            SOLICITAR
+        </ion-button>
+
+        <ion-button (click)="EliminarSolicitud()" color="dark" class="btEliminarSoli" expand="block">
+            Borrar
+        </ion-button>
+
+        <ion-button (click)="ActualizarSolicitud()" color="dark" class="btActualizarSoli" expand="block">
+            Actualizar
+        </ion-button>
+
+
+
+
+    </form>
+
+
+
+</ion-content>
