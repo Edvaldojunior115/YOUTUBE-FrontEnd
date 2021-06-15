@@ -1,8 +1,6 @@
 ***IONIC***
 
-**Una vez descargado el repositorio:**
+**Una vez descargado el repositorio EJECUTAR:**
 
-**EJECUTAR:**
-
-*-Para inicilaización del servidor abrir la carpeta en un cmd ejecutar:*
+*-En una consola de cmd, dirigirse a la carpeta del proyecto y luego ejecutar el siguiente comando:*
     *ionic serve*
